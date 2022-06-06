@@ -6,48 +6,48 @@
 
 ### transactions
 
-| column            | data_type | constraint | description      |
+| Column            | Data_Type | Constraint | Description      |
 |-------------------|-----------|------------|------------------|
-| id                | integer   | not null   | transaction id   |
-| type_transactions | varchar   | not null   | purchase/sale    |
-| id_kontragenta    | integer   | not null   | kontragent id    |
-| id_stock          | integer   | not null   | stock id         |
-| id_produkt        | integer   | not null   | produkt id       |
-| product quantity  | varchar   | not null   | product quantity |
-| product price     | varchar   | not null   | product price    |
+| id                | integer   | not null   | transaction ID   |
+| transaction_type  | enum      | not null   | purchase/sale    |
+| contractor_id     | integer   | not null   | contractor ID    |
+| stock_id          | integer   | not null   | stock ID         |
+| product_id        | integer   | not null   | produkt ID       |
+| product_quantity  | numeric   | not null   | product quantity |
+| product_price     | numeric   | not null   | product price    |
 
-### kontragents
+### contractors
 
 | column | data_type | constraint | description        |
 |--------|-----------|------------|--------------------|
-| id     | integer   | not null   | kontragent's id    |
-| name   | varchar   | not null   | kontragent's name  |
-| phone  | integer   | not null   | kontragent's phone |
-| city   | varchar   | not null   | kontragent's city  |
+| id     | integer   | not null   | contractor's ID    |
+| name   | varchar   | not null   | contractor's name  |
+| phone  | integer   | not null   | contractor's phone |
+| city   | varchar   | not null   | contractor's city  |
 
 ### products
 
-| column | data_type | constraint | description          |
-|--------|-----------|------------|----------------------|
-| id     | integer   | not null   | product id           |
-| name   | varchar   | not null   | product's name  |
-| od_vymir  | integer   | not null   | unit of measure for the quantity of goods |
-| pereriz   | varchar   | not null   | wire cross-sectional area  |
+| column        | data_type | constraint | description                               |
+| ------------- | --------- | ---------- | ----------------------------------------- |
+| id            | integer   | not null   | product ID                                |
+| name          | varchar   | not null   | product's name                            |
+| unit          | enum      | not null   | unit of measure for the quantity of goods |
+| cross_section | varchar   | not null   | wire cross-sectional area                 |
 
 ### stock
 
-| column | data_type | constraint | description          |
-|--------|-----------|------------|----------------------|
-| id     | integer   | not null   | stock id     |
-| id_produkt   | integer   | not null   | product id   |
-| id_manufacturer  | integer   | not null   | manufacturer id |
-| product quantity   | varchar   | not null   | product quantity  |
+| column           | data_type | constraint | description      |
+| ---------------- | --------- | ---------- | ---------------- |
+| id               | integer   | not null   | stock ID         |
+| product_id       | integer   | not null   | product ID       |
+| manufacturer_id  | integer   | not null   | manufacturer ID  |
+| product_quantity | varchar   | not null   | product quantity |
 
 ### manufacturers
 
 | column | data_type | constraint | description          |
 |--------|-----------|------------|----------------------|
-| id     | integer   | not null   | manufacturers id     |
+| id     | integer   | not null   | manufacturers ID     |
 | name   | varchar   | not null   | manufacturer's name  |
 | phone  | integer   | not null   | manufacturer's phone |
 | city   | varchar   | not null   | manufacturer's city  |
