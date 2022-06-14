@@ -2,7 +2,7 @@
 
 ## Database Schema
 
-![Database Schema](/images/database_schema.jpg)
+![Database Schema](/images/database_schema.png)
 
 ### transactions
 
@@ -12,42 +12,42 @@
 | transaction_type  | enum      | not null   | purchase/sale    |
 | contractor_id     | integer   | not null   | contractor ID    |
 | stock_id          | integer   | not null   | stock ID         |
-| product_id        | integer   | not null   | produkt ID       |
-| product_quantity  | numeric   | not null   | product quantity |
-| product_price     | numeric   | not null   | product price    |
+| product_id        | integer   | not null   | product ID       |
+| product_quantity  | double    | not null   | product quantity |
+| product_price     | double    | not null   | product price    |
 
 ### contractors
 
-| column | data_type | constraint | description        |
+| Column | Data_Type | Constraint | Description        |
 |--------|-----------|------------|--------------------|
-| id     | integer   | not null   | contractor's ID    |
-| name   | varchar   | not null   | contractor's name  |
-| phone  | integer   | not null   | contractor's phone |
-| city   | varchar   | not null   | contractor's city  |
+| id     | integer   | not null   | contractor ID      |
+| name   | varchar   | not null   | contractor name    |
+| phone  | varchar   | not null   | contractor phone   |
+| city   | varchar   | not null   | contractor city    |
 
 ### products
 
-| column        | data_type | constraint | description                               |
+| Column        | Data_Type | Constraint | Description                               |
 | ------------- | --------- | ---------- | ----------------------------------------- |
 | id            | integer   | not null   | product ID                                |
-| name          | varchar   | not null   | product's name                            |
+| name          | varchar   | not null   | product name                              |
 | unit          | enum      | not null   | unit of measure for the quantity of goods |
-| cross_section | varchar   | not null   | wire cross-sectional area                 |
+| cross_section | double    | not null   | wire cross-sectional area                 |
 
 ### stock
 
-| column           | data_type | constraint | description      |
+| Column           | Data_Type | Constraint | Description      |
 | ---------------- | --------- | ---------- | ---------------- |
 | id               | integer   | not null   | stock ID         |
 | product_id       | integer   | not null   | product ID       |
 | manufacturer_id  | integer   | not null   | manufacturer ID  |
-| product_quantity | varchar   | not null   | product quantity |
+| product_quantity | double    | not null   | product quantity |
 
 ### manufacturers
 
-| column | data_type | constraint | description          |
+| Column | Data_Type | Constraint | Description          |
 |--------|-----------|------------|----------------------|
 | id     | integer   | not null   | manufacturers ID     |
-| name   | varchar   | not null   | manufacturer's name  |
-| phone  | integer   | not null   | manufacturer's phone |
-| city   | varchar   | not null   | manufacturer's city  |
+| name   | varchar   | not null   | manufacturer name    |
+| phone  | varchar   | not null   | manufacturer phone   |
+| city   | varchar   | not null   | manufacturer city    |
