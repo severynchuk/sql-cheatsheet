@@ -36,12 +36,12 @@
 
 ### stock
 
-| Column           | Data_Type  | Constraint | Description      |
-| ---------------- | ---------- | ---------- | ---------------- |
-| id               | PK integer | not null   | stock ID         |
-| product_id       | FK integer | not null   | product ID       |
-| manufacturer_id  | FK integer | not null   | manufacturer ID  |
-| product_quantity | double     | not null   | product quantity |
+| Column           | Data_Type | Constraint  | Description      |
+| ---------------- | --------- | ----------- | ---------------- |
+| id               | integer   | PK not null | stock ID         |
+| product_id       | integer   | FK not null | product ID       |
+| manufacturer_id  | integer   | FK not null | manufacturer ID  |
+| product_quantity | double    | not null    | product quantity |
 
 ### manufacturers
 
